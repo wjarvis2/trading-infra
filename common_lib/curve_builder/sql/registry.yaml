@@ -1,0 +1,28 @@
+# SQL Query Registry
+# Maps query names to their file locations and expected SHA-256 hashes
+# This ensures SQL files haven't been modified without updating Python implementations
+
+queries:
+  curve_mid_5s:
+    path: "data_pipeline/intraday/build_curve_mid_5s.sql"
+    description: "Materialized view for 5-second mid prices across front 8 contracts"
+    sha256: null  # Will be calculated on first run
+    last_validated: null
+    
+  curve_mid_5s_historical:
+    path: "infra/sql/create_curve_mid_5s.sql"
+    description: "Historical curve mid prices view"
+    sha256: null
+    last_validated: null
+    
+  continuous_contracts_5s:
+    path: "infra/sql/09_continuous_contracts.sql"
+    description: "Continuous contracts mapping for 5-second bars"
+    sha256: null
+    last_validated: null
+    
+  spot_adjustment:
+    path: null  # Will be created as part of curve_builder
+    description: "Spot price adjustment logic matching models/spot_price.py"
+    sha256: null
+    last_validated: null

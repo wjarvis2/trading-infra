@@ -1,0 +1,1 @@
+"""SQL query management for curve calculations."""
